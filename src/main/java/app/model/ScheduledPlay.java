@@ -26,6 +26,9 @@ public class ScheduledPlay {
     @Column(name = "travels")
     private boolean travels;
 
+    @Column(name = "guest_play_name", nullable = true)
+    private String guestPlayName;
+
     @MapsId("admin_username")
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "admin_username", referencedColumnName = "username")

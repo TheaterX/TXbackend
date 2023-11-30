@@ -20,16 +20,16 @@ public class UserService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public void createUser(CreateUserDTO createUserDTO){
+    public void createUser(CreateUserDTO createUserDTO) {
         System.out.println(createUserDTO.getBirthDate());
-        if(createUserDTO.getUserType().equals(UserType.ADMIN)) {
-            AdminUser adminUser = modelMapper.map(createUserDTO, AdminUser.class);
-            adminRepository.save(adminUser);
-        }
-        if(createUserDTO.getUserType().equals(UserType.CLASSIC)){
-            ClassicUser classicUser = modelMapper.map(createUserDTO, ClassicUser.class);
-            classicUserRepository.save(classicUser);
-        }
+//        if(createUserDTO.getUserType().equals(UserType.ADMIN)) {
+//            AdminUser adminUser = modelMapper.map(createUserDTO, AdminUser.class);
+//            adminRepository.save(adminUser);
+//        }
+        ClassicUser classicUser = modelMapper.map(createUserDTO, ClassicUser.class);
+        classicUser.setUserType(UserType.CLASSIC);
+        classicUser.setClassicUserType(ClassicUserType.CLASSIC);
+        classicUserRepository.save(classicUser);
     }
 
 }

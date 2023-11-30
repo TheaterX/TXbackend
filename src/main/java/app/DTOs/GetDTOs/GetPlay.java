@@ -1,6 +1,5 @@
-package app.DTOs;
+package app.DTOs.GetDTOs;
 
-import app.DTOs.keysDTO.SeatKeyDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SeatDTO {
-    private SeatKeyDTO id;
+public class GetPlay {
+    private String name;
+    private String director;
+    private int id;
 }

@@ -31,4 +31,6 @@ public class SeatController {
                            @RequestParam(name = "scene", required = true) String sceneName)  {
         seatService.deleteSeat(new DeleteSeatDTO(row,number,sceneName));
     }
+
+
 }

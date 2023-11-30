@@ -6,7 +6,11 @@ import app.DTOs.CreatePlayDTO;
 import app.services.ActorService;
 import app.services.PlayService;
 import com.sun.tools.attach.AttachNotSupportedException;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

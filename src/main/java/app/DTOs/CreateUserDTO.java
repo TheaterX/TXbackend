@@ -15,8 +15,6 @@ public class CreateUserDTO {
     private String name;
     private String surname;
     private String password;
-    private UserType userType;
-    @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
-    private ClassicUserType classicUserType;
 }

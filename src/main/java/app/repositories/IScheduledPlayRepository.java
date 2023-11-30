@@ -36,7 +36,9 @@ public interface IScheduledPlayRepository extends JpaRepository<ScheduledPlay, S
 
     @Query("SELECT sp.id.scheduledDate " +
             "FROM ScheduledPlay sp " +
-            "WHERE sp.id.sceneName = :scene")
+            "WHERE sp.id.sceneName = :scene " +
+            "AND sp.travels = false " +
+            "AND sp.canceled = false")
     List<Date> findFreeDatesForScene(@Param("scene") String scene);
 
     @Query("SELECT s " +
@@ -44,7 +46,8 @@ public interface IScheduledPlayRepository extends JpaRepository<ScheduledPlay, S
             "WHERE s.name NOT IN " +
             "(SELECT sp.scene.name " +
             " FROM ScheduledPlay sp " +
-            " WHERE DATE(sp.id.scheduledDate) = DATE(:date))")
+            " WHERE sp.travels = false " +
+            "AND DATE(sp.id.scheduledDate) = DATE(:date))")
     List<Scene> findFreeScenesForDate(@Param("date") Date date);
 
 }

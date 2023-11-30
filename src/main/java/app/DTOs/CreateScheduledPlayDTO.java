@@ -12,4 +12,5 @@ public class CreateScheduledPlayDTO {
     private String adminUser;
     private boolean guest;
     private boolean travels;
+    private String guestPlayName;
 }

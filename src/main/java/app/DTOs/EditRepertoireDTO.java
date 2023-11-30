@@ -7,8 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class CreateRepertoireDTO {
+public class EditRepertoireDTO {
     private int year;
-    private String name;
     private List<Integer> plays;
 }

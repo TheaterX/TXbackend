@@ -3,6 +3,8 @@ package app.model;
 import app.model.EmbededKeys.SeatKey;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Seat {
 
@@ -12,6 +14,9 @@ public class Seat {
     @MapsId("scene_name")
     @JoinColumn(name = "scene_name")
     private Scene scene;
+
+    @ManyToMany(mappedBy = "seats")
+    private List<Reservation> reservations;
 
     public Seat() {
     }

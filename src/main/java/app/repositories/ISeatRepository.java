@@ -21,4 +21,6 @@ public interface ISeatRepository extends JpaRepository<Seat, SeatKey> {
     @Modifying
     @Query(value = "DELETE FROM seat WHERE scene_name = :sceneName", nativeQuery = true)
     int deleteSeatsBySceneName(@Param("sceneName") String sceneName);
+
+
 }

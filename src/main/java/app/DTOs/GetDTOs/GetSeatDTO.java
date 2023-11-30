@@ -1,5 +1,6 @@
 package app.DTOs.GetDTOs;
 
+import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,4 +11,11 @@ import lombok.Setter;
 public class GetSeatDTO {
     private int row;
     private int number;
+    @Nullable
+    private String username;
+
+    public GetSeatDTO(int row, int number) {
+        this.row = row;
+        this.number = number;
+    }
 }
